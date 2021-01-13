@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加人员</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>添加人员</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item ">
+            <a class="nav-link" href="admin.php">主页</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="users_show.php">人员管理</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="users_add.html">添加人员</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" target="_blank" href="grades_select.php">成绩公示</a>
+        </li>
+    </ul>
+</nav>
+<div style="max-width: 500px;min-width: 250px;margin:1% auto;">
+    <form class="form-horizontal" role="form" action="users_add.php" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">账号</span>
+            </div>
+            <input class="form-control" type="text" name="username" id="username" placeholder="请输入学号/教职工账号">
+
+        </div>
+        <!----------------------------------------------->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">密码</span>
+            </div>
+            <input class="form-control" type="password" name="pwd" id="pwd" placeholder="请输入密码">
+        </div>
+        <!----------------------------------------------->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">姓名</span>
+            </div>
+            <input class="form-control" type="text" name="realname" id="realname" placeholder="请输入真实姓名">
+        </div>
+        <!----------------------------------------------->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">学院</span>
+            </div>
+            <input class="form-control" type="text" name="collage" id="collage" placeholder="请输入所属学院">
+        </div>
+        <!----------------------------------------------->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">专业</span>
+            </div>
+            <input class="form-control" type="text" name="profession" id="profession" placeholder="请输入所属专业">
+        </div>
+        <!----------------------------------------------->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">身份</span>
+            </div>
+            <select class="form-control" id="kind" name="kind">
+                <option value="2">教师</option>
+                <option value="3">学生</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">提交</button>
+    </form>
+</div>
+</body>
+</html>
