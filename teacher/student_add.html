@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加人员</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0;margin-top:0;">
+    <h1>添加考生</h1>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav" id="nav">
+        <li class="nav-item" v-for="(tagName, index) in tagNames_tch">
+            <a :class="isActiveClass(urls_tch[index])" :href='urls_tch[index]'>{{ tagName }}</a>
+        </li>
+    </ul>
+</nav>
+<div class="container" style="width: 35%;min-width: 150px;margin-top: 20px;">
+    <form class="form-horizontal" role="form" action="../register.php"
+          method="post" id="form">
+        <div class="input-group mb-3" v-for="(word,index) in addIptStuCN">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{word}}</span>
+            </div>
+            <input class="form-control" type="text" :name='addIptStuEN[index]' :id='addIptStuEN[index]'
+                   :placeholder='addIptStuPD[index]'>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">身份</span>
+            </div>
+            <select class="form-control" name="kind" id="kind">
+                <option value="3">学生</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="min-width: 100%;">提交</button>
+    </form>
+</div>
+</body>
+<script>
+    let nav = new Vue({
+        el: '#nav',
+        data: {
+            tagNames_tch: ['主页', '考生浏览', '添加考生', '成绩公示', '试卷分析', '试卷制作', '试卷批阅', '题库更新', '题库浏览'],
+            urls_tch: [
+                'teacher.php', 'student_show.php', 'student_add.html', '../admin/grades_select.php', 'analysis_select.php',
+                'make_paper_1.php', 'paper_marking_select.php', 'problems_add.html', 'problems_show.php'
+            ]
+        },
+        methods: {
+            isActiveClass: function (url) {
+                if (window.location.href.indexOf(url) > 0) {
+                    return ('nav-link active');
+                } else {
+                    return ('nav-link');
+                }
+            }
+        }
+    })
+    let input = new Vue({
+        el: '#form',
+        data: {
+            addIptStuCN: ['账号', '密码', '姓名', '学院', '专业'],
+            addIptStuEN: ['username', 'pwd', 'realname', 'collage', 'profession'],
+            addIptStuPD: ['请输入账号', '密码', '请输入姓名', '请输入所属学院', '请输入所属专业']
+        }
+    })
+</script>
+</html>

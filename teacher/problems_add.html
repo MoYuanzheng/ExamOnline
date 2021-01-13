@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目更新</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0;margin-top:0;">
+    <h1>试卷制作</h1>
+</div>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item ">
+            <a class="nav-link" href="teacher.php">主页</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="student_show.php">考生浏览</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="student_add.html">添加考生</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " target="_blank" href="../admin/grades_select.php">成绩公示</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="analysis_select.php">试卷分析</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="make_paper_1.php">试卷制作</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="paper_marking_select.php">试卷批阅</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="problems_add.html">题库更新</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="problems_show.php">题库浏览</a>
+        </li>
+    </ul>
+</nav>
+<div class="container" style="width: 30%">
+    <form class="form-horizontal" role="form" style="margin-top: 12.5%;" action="problems_add.php"
+          method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">题目类型</span>
+            </div>
+            <select class="form-control" name="type" id="type">
+                <option value="-1">请选择</option>
+                <option value="1">选择题</option>
+                <option value="2">填空题</option>
+                <option value="3">主观题</option>
+            </select>
+        </div>
+        <div class="input-group mb-3" >
+            <div class="input-group-prepend">
+                <span class="input-group-text">题目数量</span>
+            </div>
+            <input class="form-control" type="text" name="num" id="num" placeholder="请输入添加题目数量">
+        </div>
+        <button type="button" id="sub" class="btn btn-primary" style="margin-left: 25%;width: 50%;" onclick="f();">提交</button>
+    </form>
+</div>
+</body>
+<script>
+    function f() {
+        let num = document.getElementById("num").value;
+        let type = document.getElementById("type").value;
+        if (num >= 1 && num <= 50 && type > 0) {
+            document.getElementById('sub').type = 'submit';
+        } else {
+            alert('请在输入框内填入或选择合法内容！');
+        }
+    }
+</script>
+</html>

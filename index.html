@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线考试系统</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<style>
+    body {
+        height: 100vh;
+        width:100vm;
+        background-image: linear-gradient(#CCFFFF, #FFFFFF);
+    }
+    #form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+<header style="justify-content: center;text-align: center;color: #666699;font-family:'YaHei'; " >
+    <h1 >《PHP Web程序设计》</h1><h2>在线考试系统</h2>
+</header>
+<div id="form">
+    <form class="form-horizontal" role="form" style="width: 20%; margin-top: 5.5%;" action="./login.php"
+          method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" style="border: #99CCCC 1px solid;background-color:#99CCCC; ">账 号</span>
+            </div>
+            <input class="form-control" style="border:1px solid #99CCCC;background-color: transparent;" type="text" name="username" id="username" placeholder="请输入账号">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" style="border: #99CCCC 1px solid;background-color:#99CCCC;">密 码</span>
+            </div>
+            <input class="form-control" style="border:1px solid #99CCCC;background-color: transparent;" type="password" name="pwd" id="pwd" placeholder="请输入密码">
+        </div>
+        <button type="submit" class="btn btn-outline-warning" style="width: 100%;"><strong>登 录</strong></button>
+        <a href="register.html">
+            <button type="button" class="btn btn-outline-info" style="width: 100%;margin-top: 2.5%;"><strong>注 册</strong></button>
+        </a>
+    </form>
+</div>
+</body>
+</html>
